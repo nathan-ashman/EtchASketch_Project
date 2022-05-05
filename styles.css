@@ -4,9 +4,17 @@
     border: 5px solid black;
 }
 
+.clear {
+    width: 10px;
+    height: 10px;
+    background-color: blue;
+    color: gray;
+    display: block;
+}
+
 
 #sketchpad {
-    margin: 10px 400px;
+    margin: 0;
     display: inline-grid;
     grid-template-columns: auto auto auto auto;
     row-gap: 0;
