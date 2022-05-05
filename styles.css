@@ -1,0 +1,16 @@
+.square-border {
+    /* box-sizing: border-box; */
+    width: 100px;
+    height: 100px;
+    /* display: inline-flex; */
+    border: 5px solid black;
+    /* padding: 20px; */
+}
+
+#sketchpad {
+    margin: 10px 400px;
+    display: inline-grid;
+    grid-template-columns: auto auto auto auto;
+    row-gap: 0;
+    column-gap: 0;
+}
