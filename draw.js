@@ -8,18 +8,18 @@ function drawSquares(numSquares) {
         for(let i=1; i<=4; i++){
             let square = document.createElement("div");
             square.className = "square-border";
+            square.addEventListener("mouseover", (e)=>{
+                console.log(e);
+                square.addEventListener("click", draw(square));
+            })
             squareRow.appendChild(square);
         }
     }
+}
 
-    // for(let i=1; i<=16; i++){
-    //     let square = document.createElement("div");
-    //     square.className = "square-border";
-    //     sketchpadDiv.appendChild(square);
-    // }
+let squares = document.getElementsByClassName("square-border");
+console.log(squares);
 
-    
-
-
-
+function draw(element) {
+    element.style.backgroundColor = "red";
 }

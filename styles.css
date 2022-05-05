@@ -1,11 +1,9 @@
 .square-border {
-    /* box-sizing: border-box; */
     width: 100px;
     height: 100px;
-    /* display: inline-flex; */
     border: 5px solid black;
-    /* padding: 20px; */
 }
+
 
 #sketchpad {
     margin: 10px 400px;
