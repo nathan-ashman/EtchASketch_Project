@@ -1,16 +1,11 @@
-function drawSquares(numSquares) {
-    let sketchpadDiv = document.getElementById("sketchpad");
-    let clearBtn = document.createElement("button");
-    clearBtn.style.width = `100px`;
-    clearBtn.style.height = `20px`;
-    clearBtn.style["margin-top"] = `100px`;
-    clearBtn.innerHTML += "Clear grid";
-    
-    for(let i=1; i<=4; i++){
+let sketchpadDiv = document.getElementById("sketchpad");    
+function drawSquares(sideSquares=4) {
+
+    for(let i=1; i<=sideSquares; i++){
         let squareRow = document.createElement("div");
         squareRow.className = "square-row";
         sketchpadDiv.appendChild(squareRow);
-        for(let i=1; i<=4; i++){
+        for(let i=1; i<=sideSquares; i++){
             let square = document.createElement("div");
             let squareClicked = false;
             square.className = "square-border";
@@ -18,18 +13,30 @@ function drawSquares(numSquares) {
             square.addEventListener("click", ()=>{
                 squareClicked = true;
                 square.addEventListener("mouseover", (e)=>{
-                    if(squareClicked){draw(square)}
+                    if(squareClicked){color(square)}
                 })
             });
             squareRow.appendChild(square);
         }
     }
-    sketchpadDiv.appendChild(clearBtn);
 }
 
-let squares = document.getElementsByClassName("square-border");
-console.log(squares);
 
-function draw(element) {
+function color(element) {
     element.style.backgroundColor = "red";
+}
+
+function clearAndRedraw(event) {
+    let btn = event.target;
+    btn.onclick = ()=>{
+        
+        let sideSquares = prompt("Please enter the number of squares per side for the new grid.");
+        if(sideSquares <= 100){
+            sketchpadDiv.innerHTML = "";
+            drawSquares(sideSquares);
+        }else {
+            sideSquares = prompt("Please enter the number of squares per side for the new grid.");
+        }
+    }
+    console.log(event);
 }
