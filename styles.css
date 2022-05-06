@@ -1,6 +1,6 @@
 .square-border {
-    width: 100px;
-    height: 100px;
+    width: 50px;
+    height: 50px;
     border: 5px solid black;
 }
 
@@ -16,7 +16,7 @@ button {
 
 
 #sketchpad {
-    margin: 20px 0;
+    margin: 20px 500px;
     display: inline-grid;
     grid-template-columns: auto auto auto auto;
     row-gap: 0;

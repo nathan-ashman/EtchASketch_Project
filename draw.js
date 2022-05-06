@@ -1,6 +1,10 @@
 let sketchpadDiv = document.getElementById("sketchpad");    
 function drawSquares(sideSquares=4) {
-
+    sketchpadDiv.style["grid-template-columns"] = "auto ".repeat(sideSquares);
+    // if(sideSquares >= 5){
+    //     for(let i=1; i<=sideSquares; i++)
+    //         sketchpadDiv.style["grid-template-columns"] += " auto"
+    // }
     for(let i=1; i<=sideSquares; i++){
         let squareRow = document.createElement("div");
         squareRow.className = "square-row";
@@ -9,13 +13,10 @@ function drawSquares(sideSquares=4) {
             let square = document.createElement("div");
             let squareClicked = false;
             square.className = "square-border";
-            
-            square.addEventListener("click", ()=>{
-                squareClicked = true;
-                square.addEventListener("mouseover", (e)=>{
-                    if(squareClicked){color(square)}
-                })
-            });
+            // if(sideSquares)
+            square.addEventListener("mouseover", (e)=>{
+                color(square);
+            })
             squareRow.appendChild(square);
         }
     }
